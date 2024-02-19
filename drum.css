@@ -8,23 +8,29 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
- 
-
- 
+  min-height: 70vh;
 }
 kbd {
   display: block;
-  font-size: 30px;
+  font-size: 35px;
   color: white;
+}
+.key {
+  border: 1px solid white;
+  border-radius: 6px;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 0.5rem;
+  transition: all 0.07s ease;
+  width: 10rem;
   text-align: center;
-   margin-left: 60px;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 0.5rem black;
 }
 
 .sound {
-  color: yellowgreen;
-  text-align: center;
-  margin-left: 60px;
+  color: rgb(185, 244, 66);
+  /* margin-left: 60px; */
   font-size: 20px;
-  
 }

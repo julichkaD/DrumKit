@@ -1,0 +1,30 @@
+body {
+  background-image: url(images/drum-bg.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.keys {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+ 
+
+ 
+}
+kbd {
+  display: block;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+   margin-left: 60px;
+}
+
+.sound {
+  color: yellowgreen;
+  text-align: center;
+  margin-left: 60px;
+  font-size: 20px;
+  
+}

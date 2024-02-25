@@ -2,6 +2,7 @@ body {
   background-image: url(images/drum-bg.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
+
 }
 .keys {
   display: flex;
@@ -19,7 +20,7 @@ kbd {
   border-radius: 6px;
   margin: 1rem;
   font-size: 1.5rem;
-  padding: 1rem 0.5rem;
+  padding: 10px 6px;
   transition: all 0.07s ease;
   width: 10rem;
   text-align: center;
@@ -27,7 +28,9 @@ kbd {
   background: rgba(0, 0, 0, 0.4);
   text-shadow: 0 0 0.5rem black;
 }
-
+.key:hover {
+  background-color: yellowgreen;
+}
 .sound {
   color: rgb(185, 244, 66);
   font-size: 20px;

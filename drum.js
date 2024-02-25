@@ -1,19 +1,41 @@
-function removeTransition(e) {
-  if (e.propertyName !== "transform") return;
-  e.target.classList.remove("playing");
-}
-function playSound(e) {
-  const audio = document.querySelector(`audio[data-key="${e.key}"]`);
-  const key = document.querySelector(`div[data-key="${e.key}"]`);
+const keys = document.querySelectorAll(".key");
+
+function playSound(key) {
+  const audio = document.querySelector(
+    `audio[data-key="${key.toLowerCase()}"]`
+  );
+  // console.log(audio);
+  const keyElement = document.querySelector(
+    `.key[data-key="${key.toLowerCase()}"]`
+  );
+
   if (!audio) return;
 
-  key.classList.add("playing");
-  audio.currentTime = 0;
+  keyElement.classList.add("active");
+  audio.currentTime = 0; // Rewind to the start
   audio.play();
+
+  setTimeout(() => {
+    keyElement.classList.remove("active");
+  }, 100);
 }
 
-const keys = Array.from(document.querySelectorAll(".key"));
-keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
+window.addEventListener("keydown", function (event) {
+  playSound(event.key);
+});
 
-window.addEventListener("keydown", playSound);
+keys.forEach((key) => {
+  key.addEventListener("touchstart", function (e) {
+    e.preventDefault(); // Prevent the default touch behavior, like scrolling
+    const keyAttribute = this.getAttribute("data-key");
+    playSound(keyAttribute);
+  });
 
+  key.addEventListener("click", function () {
+    const keyAttribute = this.getAttribute("data-key");
+    playSound(keyAttribute);
+  });
+});
+
+
+  
